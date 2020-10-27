@@ -7,6 +7,7 @@ import { IconsProviderModule } from './icons-provider.module';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +29,7 @@ registerLocaleData(zh);
     NzFormModule,
     NzButtonModule,
     NzInputModule,
+    NzRadioModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
