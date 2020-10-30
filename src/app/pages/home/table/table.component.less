@@ -1,0 +1,39 @@
+:host {
+  .edit-thead {
+    position: relative;
+
+    .drop-icon {
+      position: absolute;
+      right: 16px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
+  .pop-thead {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 1px #d0cdcd;
+    z-index: 999;
+
+    .pop-title {
+      position: relative;
+      height: 100%;
+      padding: 16px;
+    }
+
+    .pop-content {
+      margin: 0;
+      padding: 0;
+
+      li {
+        color: #333;
+        list-style: none;
+        text-align: center;
+      }
+    }
+  }
+}

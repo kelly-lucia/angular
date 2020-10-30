@@ -1,1 +1,61 @@
-<p>table works!</p>
+<nz-table
+  #basicTable
+  nzBordered
+  [nzData]="listOfData"
+  [nzScroll]="{ x: '1300px' }"
+  [nzWidthConfig]="widthConfig"
+>
+  <thead>
+    <tr>
+      <th nzLeft="0px" rowspan="2">Name</th>
+      <th nzLeft="100px" rowspan="2">Age</th>
+      <th colspan="3" class="edit-thead">
+        Address1
+
+        <span class="drop-icon" (click)="dropDown = !dropDown">
+          <i nz-icon nzType="caret-down" nzTheme="outline" *ngIf="dropDown"></i>
+        </span>
+
+        <div class="pop-thead" *ngIf="!dropDown">
+          <div class="pop-title">
+            Address1
+            <span class="drop-icon" (click)="dropDown = !dropDown">
+              <i nz-icon nzType="caret-up" nzTheme="outline"></i>
+            </span>
+          </div>
+          <ul class="pop-content">
+            <li>编辑列</li>
+            <li>删除列</li>
+          </ul>
+        </div>
+      </th>
+      <th colspan="3">Address2</th>
+      <th nzRight="0px" rowspan="2">Action</th>
+    </tr>
+    <tr>
+      <th>Address11</th>
+      <th>Address12</th>
+      <th>Address13</th>
+      <th>Address21</th>
+      <th>Address22</th>
+      <th>Address23</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td nzLeft="0px">{{ data.name }}</td>
+      <td nzLeft="100px">{{ data.age }}</td>
+      <td>{{ data.address }}</td>
+      <td>{{ data.address }}</td>
+      <td>{{ data.address }}</td>
+      <td>{{ data.address }}</td>
+      <td>{{ data.address }}</td>
+      <td>{{ data.address }}</td>
+      <td nzRight="0px">
+        <a>Action 一 {{ data.name }}</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a>Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

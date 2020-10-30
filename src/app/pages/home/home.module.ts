@@ -10,9 +10,10 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ModifyParentAttrDirective } from '../../directives/modify-parent-attr.directive';
 @NgModule({
-  declarations: [FormComponent, TableComponent],
+  declarations: [FormComponent, TableComponent, ModifyParentAttrDirective],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -21,7 +22,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NzInputModule,
     NzRadioModule,
     NzTableModule,
+    NzIconModule,
     ReactiveFormsModule,
-  ]
+  ],
+  exports: [ModifyParentAttrDirective],
 })
-export class HomeModule { }
+export class HomeModule {}
