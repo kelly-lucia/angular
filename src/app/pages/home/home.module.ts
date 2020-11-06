@@ -12,6 +12,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ModifyParentAttrDirective } from '../../directives/modify-parent-attr.directive';
+import { HttpService } from '../../services/http.service';
 @NgModule({
   declarations: [FormComponent, TableComponent, ModifyParentAttrDirective],
   imports: [
@@ -26,5 +27,6 @@ import { ModifyParentAttrDirective } from '../../directives/modify-parent-attr.d
     ReactiveFormsModule,
   ],
   exports: [ModifyParentAttrDirective],
+  providers: [HttpService],
 })
 export class HomeModule {}

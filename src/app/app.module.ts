@@ -14,6 +14,8 @@ import { IconsProviderModule } from './icons-provider.module';
 import { HomeModule } from './pages/home/home.module';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import * as MockData from '../assets/_mock';
+
 registerLocaleData(zh);
 
 @NgModule({
