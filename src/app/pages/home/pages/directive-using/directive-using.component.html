@@ -1,0 +1,34 @@
+<section class="wrapper">
+  <h4>属性型指令的应用</h4>
+  <div class="parent-el" title="我是父元素的title">
+    我是父元素
+    <div
+      class="child-el"
+      appModifyParentAttr
+      [styleMap]="[{ style: 'background', value: '#7ec1ff' }]"
+      [attrMap]="[{ attr: 'title', value: '子元素修改了我的title' }]"
+      [rightNow]="true"
+    >
+      我是子元素，鼠标点击我时，父元素的背景色会发生改变,title属性也会被修改
+    </div>
+  </div>
+
+  <h4>结构型指令的应用</h4>
+
+  <p>1.ngTemplateOutlet的使用</p>
+  <ng-container *ngTemplateOutlet="greet"></ng-container>
+  <ng-template #greet><p>Hello</p></ng-template>
+  <hr />
+
+  <ng-container *ngTemplateOutlet="eng; context: myContext"></ng-container>
+  <ng-template #eng let-name>
+    <p>Hello {{ name }}!</p>
+  </ng-template>
+  <hr />
+
+  <ng-container *ngTemplateOutlet="svk; context: myContext"></ng-container>
+  <ng-template #svk let-person="localSk">
+    <p>Hello {{ person }}!</p>
+  </ng-template>
+  <hr />
+</section>

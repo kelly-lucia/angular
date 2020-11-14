@@ -12,24 +12,16 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { IconsProviderModule } from './icons-provider.module';
 import { HomeModule } from './pages/home/home.module';
-// import * as MOCKDATA from '../assets/_mock';
+import * as mock from '../assets/_mock';
+
+// console.log('mock', mock);
+
 let MOCKDATA;
-// import('../assets/_mock').then((module) => {
-//   MOCKDATA = module;
-// });
-
 (async () => {
-  console.log('1');
   MOCKDATA = await import('../assets/_mock');
-  console.log('2');
-  console.log('MOCKDATA', MOCKDATA);
+  // console.log('加载完了', MOCKDATA);
 })();
-
-(async () => {
-  console.log('3');
-})();
-
-console.log(MOCKDATA);
+// console.log('MOCKDATA', MOCKDATA);
 
 registerLocaleData(zh);
 
@@ -43,9 +35,9 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     IconsProviderModule,
     HomeModule,
-    MOCKDATA
+    // MOCKDATA
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

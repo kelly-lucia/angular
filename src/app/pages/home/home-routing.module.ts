@@ -1,34 +1,35 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormComponent } from './form/form.component';
-import { TableComponent } from './table/table.component';
+import { FormComponent } from './pages/form/form.component';
+import { TableComponent } from './pages/table/table.component';
 import { HomeComponent } from './home.component';
-import { DirectiveUsingComponent } from './directive-using/directive-using.component';
+import { DirectiveUsingComponent } from './pages/directive-using/directive-using.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
     children: [
       {
         path: 'directive-using',
-        component: DirectiveUsingComponent
+        component: DirectiveUsingComponent,
       },
       {
         path: 'form',
         component: FormComponent,
-      }, {
+      },
+      {
         path: 'table',
         component: TableComponent,
       },
       { path: '', pathMatch: 'full', redirectTo: 'directive-using' },
-    ]
+    ],
   },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}
