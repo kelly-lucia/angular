@@ -16,6 +16,7 @@ import { HomeComponent } from './home.component';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { HttpService } from '../../services/http.service';
 import { ModifyParentAttrDirective } from './directives/modify-parent-attr.directive';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ModifyParentAttrDirective } from './directives/modify-parent-attr.direc
     ModifyParentAttrDirective,
     HomeComponent,
     DirectiveUsingComponent,
+    UnlessDirective,
   ],
   imports: [
     CommonModule,

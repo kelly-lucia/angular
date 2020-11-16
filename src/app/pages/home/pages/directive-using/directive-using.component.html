@@ -31,4 +31,10 @@
     <p>Hello {{ person }}!</p>
   </ng-template>
   <hr />
+
+  <p>2.创建一个结构型指令</p>
+
+  <button (click)="condition=!condition" nz-button>点我切换</button>
+  <div *appUnless="condition" class="parent-el">我被使用了appUnless指令，点击上边的按钮，可以控制我的显示与消失</div>
+
 </section>

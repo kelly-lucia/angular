@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveUsingComponent implements OnInit {
   public myContext = { $implicit: 'World', name: 'Kelly', localSk: 'Svet' };
+
+  public condition = true;
   constructor() {}
 
   ngOnInit(): void {}
