@@ -10,6 +10,12 @@
   <li nz-menu-item>
     <a [routerLink]="['table']">表格</a>
   </li>
-</ul>
 
-<router-outlet></router-outlet>
+  <li nz-menu-item>
+    <a [routerLink]="['programmer']">继承</a>
+  </li>
+</ul>
+<button nz-button [routerLink]="['/welcome']">To Welcome</button>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

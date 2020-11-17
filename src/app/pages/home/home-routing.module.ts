@@ -4,6 +4,7 @@ import { FormComponent } from './pages/form/form.component';
 import { TableComponent } from './pages/table/table.component';
 import { HomeComponent } from './home.component';
 import { DirectiveUsingComponent } from './pages/directive-using/directive-using.component';
+import { ProgrammerComponent } from './pages/programmer/programmer.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'table',
         component: TableComponent,
+      },
+      {
+        path: 'programmer',
+        component: ProgrammerComponent,
       },
       { path: '', pathMatch: 'full', redirectTo: 'directive-using' },
     ],

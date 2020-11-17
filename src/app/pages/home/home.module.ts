@@ -10,13 +10,15 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzTableModule } from 'ng-zorro-antd/table';
-import { ReactiveFormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { HomeComponent } from './home.component';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { HttpService } from '../../services/http.service';
 import { ModifyParentAttrDirective } from './directives/modify-parent-attr.directive';
 import { UnlessDirective } from './directives/unless.directive';
+import { ProgrammerComponent } from './pages/programmer/programmer.component';
+import { FormService } from './services/form.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { UnlessDirective } from './directives/unless.directive';
     HomeComponent,
     DirectiveUsingComponent,
     UnlessDirective,
+    ProgrammerComponent,
   ],
   imports: [
     CommonModule,
