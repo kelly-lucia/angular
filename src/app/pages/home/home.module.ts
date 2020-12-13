@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -19,7 +19,9 @@ import { UnlessDirective } from './directives/unless.directive';
 import { ProgrammerComponent } from './pages/programmer/programmer.component';
 import { FormService } from './services/form.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RxjsUsingComponent } from './pages/rxjs-using/rxjs-using.component';
 
+export const HOME_NAME = new InjectionToken<string>('HomeName');
 @NgModule({
   declarations: [
     FormComponent,
@@ -29,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DirectiveUsingComponent,
     UnlessDirective,
     ProgrammerComponent,
+    RxjsUsingComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +47,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   exports: [],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    {
+      provide: HOME_NAME,
+      useValue: 'suibianxiexie',
+    },
+  ],
 })
 export class HomeModule {}

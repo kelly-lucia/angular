@@ -5,6 +5,7 @@ import { TableComponent } from './pages/table/table.component';
 import { HomeComponent } from './home.component';
 import { DirectiveUsingComponent } from './pages/directive-using/directive-using.component';
 import { ProgrammerComponent } from './pages/programmer/programmer.component';
+import { RxjsUsingComponent } from './pages/rxjs-using/rxjs-using.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
       {
         path: 'directive-using',
         component: DirectiveUsingComponent,
+      },
+      {
+        path: 'rxjs-using',
+        component: RxjsUsingComponent,
       },
       {
         path: 'form',

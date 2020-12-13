@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DiDemoComponent } from './pages/di-demo/di-demo.component';
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   {
@@ -11,6 +13,10 @@ const routes: Routes = [
     path: 'welcome',
     loadChildren: () =>
       import('./pages/welcome/welcome.module').then((m) => m.WelcomeModule),
+  },
+  {
+    path: 'di-demo',
+    component: DiDemoComponent,
   },
 ];
 

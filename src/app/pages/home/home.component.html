@@ -4,6 +4,10 @@
   </li>
 
   <li nz-menu-item>
+    <a [routerLink]="['rxjs-using']">rxjs的使用</a>
+  </li>
+
+  <li nz-menu-item>
     <a [routerLink]="['form']">表单</a>
   </li>
 
@@ -14,8 +18,12 @@
   <li nz-menu-item>
     <a [routerLink]="['programmer']">继承</a>
   </li>
+
+  <li nz-menu-item>
+    <a [routerLink]="['/welcome']">To Welcome</a>
+  </li>
 </ul>
-<button nz-button [routerLink]="['/welcome']">To Welcome</button>
+
 <div class="content">
   <router-outlet></router-outlet>
 </div>
