@@ -1,3 +1,8 @@
+<ky-checkbox [(ngModel)]="fruitA" (ngModelChange)="onModelChange($event)">喜欢吃水果(ngModel)</ky-checkbox>
+
+<ky-checkbox [(kyChecked)]="fruitB" (kyCheckedChange)="onKyCheckChange($event)" [kyDisabled]="false">喜欢吃水果(kyChecked)</ky-checkbox>
+
+
 <form nz-form [formGroup]="myForm" class="form-container">
   <nz-form-item>
     <nz-form-label nzFor="name">姓名</nz-form-label>
@@ -9,12 +14,7 @@
   <nz-form-item>
     <nz-form-label nzFor="enName">英文名</nz-form-label>
     <nz-form-control nzErrorTip="只可以包含字母,且不可以输入kelly!">
-      <input
-        nz-input
-        formControlName="enName"
-        placeholder="请输入"
-        type="text"
-      />
+      <input nz-input formControlName="enName" placeholder="请输入" type="text" />
     </nz-form-control>
   </nz-form-item>
 
@@ -34,62 +34,46 @@
   <nz-form-item>
     <nz-form-label nzFor="telPhone">电话号码</nz-form-label>
     <nz-form-control nzErrorTip="最短3位,最长11位">
-      <input
-        nz-input
-        formControlName="telPhone"
-        placeholder="请输入"
-        type="text"
-      />
+      <input nz-input formControlName="telPhone" placeholder="请输入" type="text" />
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-item>
     <nz-form-label nzFor="age">年龄</nz-form-label>
     <nz-form-control nzErrorTip="最小值18,最大值40">
-      <input
-        nz-input
-        formControlName="age"
-        placeholder="请输入"
-        type="number"
-      />
+      <input nz-input formControlName="age" placeholder="请输入" type="number" />
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-item>
     <nz-form-label nzFor="email">邮箱</nz-form-label>
     <nz-form-control nzErrorTip="未通过email格式验证">
-      <input
-        nz-input
-        formControlName="email"
-        placeholder="请输入"
-        type="email"
-      />
+      <input nz-input formControlName="email" placeholder="请输入" type="email" />
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-item>
     <nz-form-label nzFor="hobby">爱好</nz-form-label>
     <nz-form-control nzErrorTip="无验证">
-      <input
-        nz-input
-        formControlName="hobby"
-        placeholder="请输入"
-        type="text"
-      />
+      <input nz-input formControlName="hobby" placeholder="请输入" type="text" />
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-item>
     <nz-form-label nzFor="height">身高</nz-form-label>
     <nz-form-control nzErrorTip="最小值150,最大值190">
-      <input
-        nz-input
-        formControlName="height"
-        placeholder="请输入"
-        type="number"
-      />
+      <input nz-input formControlName="height" placeholder="请输入" type="number" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzFor="name">水果</nz-form-label>
+    <nz-form-control nzErrorTip="必选">
+      <app-multi-choice [question]="multiQuestion" formControlName="fruit"></app-multi-choice>
     </nz-form-control>
   </nz-form-item>
 
   <button nz-button (click)="onSubmit()">验证</button>
 </form>
+
+

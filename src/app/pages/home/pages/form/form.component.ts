@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { FormService } from '../../services/form.service';
+import { ChoiceQuestion } from '../../home.definitions';
 
 @Component({
   selector: 'app-form',
@@ -15,6 +16,30 @@ import { FormService } from '../../services/form.service';
 })
 export class FormComponent implements OnInit {
   myForm: FormGroup;
+
+  fruitA = true;
+  fruitB = false;
+
+  multiQuestion: ChoiceQuestion = {
+    titlecode: '1',
+    titlename: '标题',
+    titledescription: 'lalalalalalalala',
+    questiontype: 0,
+    optionlist: [
+      {
+        optioncode: '0',
+        optionname: '苹果',
+      },
+      {
+        optioncode: '1',
+        optionname: '苹果1',
+      },
+      {
+        optioncode: '2',
+        optionname: '苹果2',
+      },
+    ],
+  };
 
   confirmValidator = (control: FormControl): { [s: string]: boolean } => {
     if (!control.value) {
@@ -43,17 +68,26 @@ export class FormComponent implements OnInit {
       height: this.fb.control(null, [
         Validators.compose([Validators.min(150), Validators.max(190)]),
       ]),
+      fruit: [null, [Validators.required]],
     });
   }
 
   onSubmit(): void {
-    console.log(this.formService.page);
     this.formService.page = 'form';
-    console.log(this.formService.page);
     // tslint:disable-next-line: forin
     for (const i in this.myForm.controls) {
       this.myForm.controls[i].markAsDirty();
       this.myForm.controls[i].updateValueAndValidity();
     }
+  }
+
+  onModelChange(value: boolean): void {
+    console.log(value);
+    console.log('fruitA', this.fruitA);
+  }
+
+  onKyCheckChange(value: boolean): void {
+    console.log(value);
+    console.log('fruitB', this.fruitB);
   }
 }

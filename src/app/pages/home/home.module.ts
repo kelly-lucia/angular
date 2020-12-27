@@ -13,13 +13,17 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { HomeComponent } from './home.component';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+
 import { HttpService } from '../../services/http.service';
 import { ModifyParentAttrDirective } from './directives/modify-parent-attr.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { ProgrammerComponent } from './pages/programmer/programmer.component';
 import { FormService } from './services/form.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RxjsUsingComponent } from './pages/rxjs-using/rxjs-using.component';
+import { ComponentsModule } from './components/components.module';
+
 
 export const HOME_NAME = new InjectionToken<string>('HomeName');
 @NgModule({
@@ -40,11 +44,14 @@ export const HOME_NAME = new InjectionToken<string>('HomeName');
     NzButtonModule,
     NzInputModule,
     NzRadioModule,
+    NzCheckboxModule,
     NzTableModule,
     NzIconModule,
     NzButtonModule,
     NzMenuModule,
     ReactiveFormsModule,
+    FormsModule,
+    ComponentsModule,
   ],
   exports: [],
   providers: [
